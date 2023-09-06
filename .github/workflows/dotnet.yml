@@ -2,9 +2,9 @@ name: dotnet
 on:
   push:
     branches:
-#      - alpha
-#      - preview
-#      - main
+      - alpha
+      - preview
+      - main
 
 jobs:
   release:
@@ -33,7 +33,7 @@ jobs:
       - name: Get new version
         id: get_version
         run: echo "::set-output name=version::$(jq -r ".version" package.json)"
-      
+    
     outputs:
       new_version: ${{ steps.get_version.outputs.version }}
   
@@ -56,10 +56,10 @@ jobs:
           dotnet-version: '7.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore NativeAppStore/NativeAppStore.csproj
+        run: dotnet restore EasyDialog.Avalonia/EasyDialog.Avalonia.csproj
 
       - name: Build
-        run: dotnet build NativeAppStore/NativeAppStore.csproj --configuration Release --no-restore
+        run: dotnet build EasyDialog.Avalonia/EasyDialog.Avalonia.csproj --configuration Release --no-restore
 
       #  需要修改项目根目录下的 Directory.Build.props 中的Version跟package.json中的version一致
       - name: Update version
@@ -95,7 +95,7 @@ jobs:
 
 
       - name: Publish NuGet package
-        run: dotnet pack NativeAppStore/NativeAppStore.csproj --configuration Release --no-build -o out
+        run: dotnet pack EasyDialog.Avalonia/EasyDialog.Avalonia.csproj --configuration Release --no-build -o out
 
       - name: Push to NuGet
         run: |
