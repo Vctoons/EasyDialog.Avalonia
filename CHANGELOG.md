@@ -1,3 +1,10 @@
+# [1.0.0-alpha.3](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2023-09-06)
+
+
+### Features
+
+* Modify the usage mode ([12157bc](https://github.com/Vctoons/EasyDialog.Avalonia/commit/12157bc4dcb24889e41865538dfea98f186b1414))
+
 # [1.0.0-alpha.2](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2023-09-06)
 
 
