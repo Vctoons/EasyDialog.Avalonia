@@ -1,3 +1,10 @@
+# [1.0.0-alpha.4](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2023-09-06)
+
+
+### Bug Fixes
+
+* DialogService.ShowLoading can not find identifier ([3f4bef8](https://github.com/Vctoons/EasyDialog.Avalonia/commit/3f4bef84f21a4b59207f8fdc89ac16cfe9d8e3fe))
+
 # [1.0.0-alpha.3](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2023-09-06)
 
 
