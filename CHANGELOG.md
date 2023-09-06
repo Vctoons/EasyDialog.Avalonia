@@ -1,3 +1,10 @@
+# [1.0.0-alpha.2](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2023-09-06)
+
+
+### Features
+
+* update version ([a3b7b9f](https://github.com/Vctoons/EasyDialog.Avalonia/commit/a3b7b9f3fa79ef85ec321393a2e4534d1d27c460))
+
 # 1.0.0-alpha.1 (2023-09-06)
 
 
