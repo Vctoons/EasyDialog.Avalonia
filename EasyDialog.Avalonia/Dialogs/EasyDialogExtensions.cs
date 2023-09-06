@@ -31,12 +31,12 @@ public static class EasyDialogExtensions
     }
 
 
-    public static Control? CreateDialogView(Control view, string identifier = null)
+    public static UserControl? CreateEasyDialogView(this UserControl view, string identifier = null)
     {
-        return InjectContent(view, identifier);
+        return InjectContent(view, identifier) as UserControl;
     }
 
-    public static Window CreateDialogWindow(Window window, string identifier = null)
+    public static Window CreateEasyDialogWindow(this Window window, string identifier = null)
     {
         var content = window.Content;
         window.Content = null;
@@ -57,9 +57,9 @@ public static class EasyDialogExtensions
             }
         };
 
-        DialogService.OnDialogShowLoadingHandler += (s, options, isLoading) =>
+        DialogService.OnDialogShowLoadingHandler += (identifier, options, isLoading) =>
         {
-            if (s == DialogConsts.MainViewLoadingIdentifier)
+            if (identifier == DialogConsts.MainViewLoadingIdentifier)
             {
                 options?.Invoke(loadingContainer);
                 loadingContainer.IsLoading = isLoading;

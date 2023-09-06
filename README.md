@@ -1,88 +1,117 @@
-# NativeAppStore
+# EasyDialog.Avalonia
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org/)
-[![GitHub Stars](https://img.shields.io/github/stars/zyknow/NativeAppStore.svg)](https://github.com/zyknow/NativeAppStore/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/zyknow/NativeAppStore.svg)](https://github.com/zyknow/NativeAppStore/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/Vctoons/EasyDialog.Avalonia.svg)](https://github.com/Vctoons/EasyDialog.Avalonia/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/Vctoons/EasyDialog.Avalonia.svg)](https://github.com/Vctoons/EasyDialog.Avalonia/issues)
 
 ## Introduction
 
-in .net build Native App,you may want to save some data in local, so you can use this package to save data in local.
+make you easily to use Dialog in Avalonia.
 
 ## Nuget Packages
 
 | Name                  | Version                                                                                                                                     | Download                                                                                                                                     |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| Zyknow.NativeAppStore | [![Zyknow.NativeAppStore](https://img.shields.io/nuget/v/Zyknow.NativeAppStore.svg)](https://www.nuget.org/packages/Zyknow.NativeAppStore/) | [![Zyknow.NativeAppStore](https://img.shields.io/nuget/dt/Zyknow.NativeAppStore.svg)](https://www.nuget.org/packages/Zyknow.NativeAppStore/) |
+| EasyDialog.Avalonia | [![EasyDialog.Avalonia](https://img.shields.io/nuget/v/EasyDialog.Avalonia.svg)](https://www.nuget.org/packages/EasyDialog.Avalonia/) | [![EasyDialog.Avalonia](https://img.shields.io/nuget/dt/EasyDialog.Avalonia.svg)](https://www.nuget.org/packages/EasyDialog.Avalonia/) |
 
-## Guide
+## Avalonia Framework Tests
 
-in many ui framework, exit hooks many cannot must be invoke （like anrdoid）,so you may need give the save decision to
-user,or global
-exception catcher to save stores.
+* Desktop
+  * [x] Windows
+  * [ ] Mac
+  * [ ] Linux
+* Mobile
+  * [x] Android
+  * [ ] iOS
+* Web
+  * [x] WebAssembly
 
-or if you have any ideas,Welcome to create this rep [Issues](https://github.com/zyknow/NativeAppStore/issues)
+## Use
 
-## Usage
-
-1. Add Package Reference `Zyknow.NativeAppStore`
-2. Add Services
+1. Add Package Reference `EasyDialog.Avalonia`
+2. Add Services, or you can new DialogService on yourself
 
 ```csharp
-services.AddStores(GetType().Assembly, opt => { opt.EnabledCreatorStoreLoad = true; });
+services.AddEasyDialog();
 ```
 
-3. Create Store
+3. Use Style in App.xaml
 
 ```csharp
-public class MainWindowStore : StoreBase
+xmlns:dialog="clr-namespace:EasyDialog.Avalonia;assembly=EasyDialog.Avalonia"
+```
+
+```xml
+    <Application.Styles>
+        <dialog:EasyDialog/>
+    </Application.Styles>
+```
+
+4. Inject to you window or view in `App.cs`
+you need input you view or window in CreateDialogWindow or 
+```csharp
+
+if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
 {
-  
+    desktop.MainWindow = new MainWindow
+    {
+        DataContext = new MainViewModel()
+    }.CreateDialogWindow();
+}
+else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
+{
+    singleViewPlatform.MainView = new MainView
+    {
+        DataContext = new MainViewModel()
+    }.CreateDialogView();
 }
 ```
 
-4. To Save Store On App Exit Or Global Exception Catch
-
+5. get your `DialogService` to use
 ```csharp
-// that will save all stores
-StoreSaveExecutor.SaveAllStores();
+    private async void Button_OnClick(object? sender, RoutedEventArgs e)
+    {
+        using var res = dialogService.ShowLoading();
 
-// or invoke store save
-store.SaveStore();
+        await Task.Delay(1000);
+    }
+
+    private async void Button_OnClick1(object? sender, RoutedEventArgs e)
+    {
+        var res = await dialogService.ShowAsync(new TextBlock()
+        {
+            Text = "123"
+        }, options: opt => { opt.CloseOnClickAway = true; });
+    }
+
+    
+    private async void Button_OnClick2(object? sender, RoutedEventArgs e)
+    {
+        var res = await dialogService.ShowConfirmAsync(options: opt => { opt.CloseOnClickAway = true; });
+    }
 ```
 
-## Framework Tests
+## Extend
 
-### Avalonia
+### Use in other window or view
 
-* Desktop
-    * [x] Windows
-    * [ ] Mac
-    * [ ] Linux
-* Mobile
-    * [x] Android
-    * [ ] iOS
-* ~~WebAssembly~~
+also you can to use  `CreateDialogWindow` or `CreateDialogView`,to include in you view ,give a different identifier.
 
-### Maui
+### Extension DialogService
 
-* Desktop
-    * [x] Windows
-    * [ ] Mac
-    * [ ] Windows
-* Mobile
-    * [ ] Android
-    * [ ] iOS
+also you can write extensions on `DialogService` to realize your dialog logic
 
-### Others
-* [x] WPF
-* [x] Winform
 
-## Author
+## Credits
 
-[Zyknow](https://github.com/zyknow)
+[Avalonia](https://github.com/AvaloniaUI/Avalonia)
+
+[Semi.Avalonia](https://github.com/irihitech/Semi.Avalonia)
+
+[DialogHost.Avalonia](https://github.com/AvaloniaUtils/DialogHost.Avalonia)
 
 ## License
 
-> You can check out the full license [here](https://github.com/zyknow/NativeAppStore/blob/master/LICENSE)
+> You can check out the full license [here](https://github.com/Vctoons/EasyDialog.Avalonia/blob/master/LICENSE)
 
 This project is licensed under the terms of the **MIT** license.

@@ -18,17 +18,17 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = EasyDialogExtensions.CreateDialogWindow(new MainWindow
+            desktop.MainWindow = new MainWindow
             {
                 DataContext = new MainViewModel()
-            });
+            }.CreateEasyDialogWindow();
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
-            singleViewPlatform.MainView = EasyDialogExtensions.CreateDialogView(new MainView
+            singleViewPlatform.MainView = new MainView
             {
                 DataContext = new MainViewModel()
-            });
+            }.CreateEasyDialogView();
         }
 
         base.OnFrameworkInitializationCompleted();
