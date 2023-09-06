@@ -1,0 +1,22 @@
+using Avalonia.Data.Converters;
+using Avalonia.Media;
+using System.Globalization;
+
+namespace EasyDialog.Avalonia.Loading;
+
+internal class BrushToColorConverter : IValueConverter
+{
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is ISolidColorBrush b)
+        {
+            return b.Color;
+        }
+        return Colors.Transparent;
+    }
+
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}

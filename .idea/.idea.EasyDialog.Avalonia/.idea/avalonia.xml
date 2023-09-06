@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="AvaloniaDemo/AvaloniaDemo/App.axaml" value="AvaloniaDemo/AvaloniaDemo.Browser/AvaloniaDemo.Browser.csproj" />
+        <entry key="AvaloniaDemo/AvaloniaDemo/Views/MainWindow.axaml" value="AvaloniaDemo/AvaloniaDemo.Browser/AvaloniaDemo.Browser.csproj" />
+        <entry key="EasyDialog.Avalonia/ConfirmDialogView.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialog.Avalonia/EasyDialog.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialog.Avalonia/Index.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialog.Avalonia/Loading/Loading.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialog.Avalonia/Loading/LoadingDark.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialog.Avalonia/Loading/LoadingLight.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialog.Avalonia/Loading/Loading_.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialog.Avalonia/Loading/Loading_Dark.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialog.Avalonia/Views/ConfirmDialogView.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialog.Avalonia/Views/MainWindow.axaml" value="EasyDialog.Avalonia/EasyDialog.Avalonia.csproj" />
+        <entry key="EasyDialogDemo/App.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialogDemo/ConfirmDialogView.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+        <entry key="EasyDialogDemo/Views/MainWindow.axaml" value="EasyDialogDemo/EasyDialogDemo.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

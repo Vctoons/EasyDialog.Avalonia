@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+
+        <PackageId>EasyDialog.Avalonia</PackageId>
+        <Authors>Zyknow</Authors>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>true</IncludeBuildOutput>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/Vctoons/EasyDialog.Avalonia</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Vctoons/EasyDialog.Avalonia</RepositoryUrl>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="$(AvaloniaPackageVersion)"/>
+        <PackageReference Include="DialogHost.Avalonia" Version="0.7.6"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0"/>
+    </ItemGroup>
+</Project>

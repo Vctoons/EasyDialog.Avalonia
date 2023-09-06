@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyDialog.Avalonia", "EasyDialog.Avalonia\EasyDialog.Avalonia.csproj", "{8FD28F5F-5197-410D-84BF-FF96A661AA9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sln", ".sln", "{FE91B2A1-2E2E-4FA4-8518-DB55B138D059}"
+	ProjectSection(SolutionItems) = preProject
+		.releaserc.json = .releaserc.json
+		Directory.Build.props = Directory.Build.props
+		package.json = package.json
+		README.md = README.md
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{4E6A67A9-4C7A-47B6-9354-2853C6FD1DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaDemo", "AvaloniaDemo\AvaloniaDemo\AvaloniaDemo.csproj", "{D8D90ADA-DB5E-4D38-A95F-5BFB04BEE27D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaDemo.Android", "AvaloniaDemo\AvaloniaDemo.Android\AvaloniaDemo.Android.csproj", "{FA2853AF-26CA-4A5B-B700-5A545F29007B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaDemo.Desktop", "AvaloniaDemo\AvaloniaDemo.Desktop\AvaloniaDemo.Desktop.csproj", "{266E94F3-D080-44F2-A15C-9B4297FCCEE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaDemo.iOS", "AvaloniaDemo\AvaloniaDemo.iOS\AvaloniaDemo.iOS.csproj", "{7BCA8A00-85BD-4650-A936-1FD507830013}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaDemo.Browser", "AvaloniaDemo\AvaloniaDemo.Browser\AvaloniaDemo.Browser.csproj", "{8BC03FF6-FB78-4F6E-9D3B-6B19E52D0483}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FD28F5F-5197-410D-84BF-FF96A661AA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FD28F5F-5197-410D-84BF-FF96A661AA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FD28F5F-5197-410D-84BF-FF96A661AA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FD28F5F-5197-410D-84BF-FF96A661AA9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8D90ADA-DB5E-4D38-A95F-5BFB04BEE27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8D90ADA-DB5E-4D38-A95F-5BFB04BEE27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8D90ADA-DB5E-4D38-A95F-5BFB04BEE27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8D90ADA-DB5E-4D38-A95F-5BFB04BEE27D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA2853AF-26CA-4A5B-B700-5A545F29007B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA2853AF-26CA-4A5B-B700-5A545F29007B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA2853AF-26CA-4A5B-B700-5A545F29007B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA2853AF-26CA-4A5B-B700-5A545F29007B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{266E94F3-D080-44F2-A15C-9B4297FCCEE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{266E94F3-D080-44F2-A15C-9B4297FCCEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{266E94F3-D080-44F2-A15C-9B4297FCCEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{266E94F3-D080-44F2-A15C-9B4297FCCEE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCA8A00-85BD-4650-A936-1FD507830013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCA8A00-85BD-4650-A936-1FD507830013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCA8A00-85BD-4650-A936-1FD507830013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCA8A00-85BD-4650-A936-1FD507830013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC03FF6-FB78-4F6E-9D3B-6B19E52D0483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC03FF6-FB78-4F6E-9D3B-6B19E52D0483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC03FF6-FB78-4F6E-9D3B-6B19E52D0483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC03FF6-FB78-4F6E-9D3B-6B19E52D0483}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8D90ADA-DB5E-4D38-A95F-5BFB04BEE27D} = {4E6A67A9-4C7A-47B6-9354-2853C6FD1DCE}
+		{FA2853AF-26CA-4A5B-B700-5A545F29007B} = {4E6A67A9-4C7A-47B6-9354-2853C6FD1DCE}
+		{266E94F3-D080-44F2-A15C-9B4297FCCEE2} = {4E6A67A9-4C7A-47B6-9354-2853C6FD1DCE}
+		{7BCA8A00-85BD-4650-A936-1FD507830013} = {4E6A67A9-4C7A-47B6-9354-2853C6FD1DCE}
+		{8BC03FF6-FB78-4F6E-9D3B-6B19E52D0483} = {4E6A67A9-4C7A-47B6-9354-2853C6FD1DCE}
+	EndGlobalSection
+EndGlobal
