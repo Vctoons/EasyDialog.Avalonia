@@ -47,20 +47,23 @@ public static class EasyDialogExtensions
 
     static Control? InjectContent(object? content, string identifier = null)
     {
+
+        var id = identifier ?? DialogConsts.MainViewDefaultIdentifier;
+        
         var loadingContainer = new EasyDialogLoadingContainer()
         {
             HorizontalContentAlignment = HorizontalAlignment.Stretch,
             VerticalContentAlignment = VerticalAlignment.Stretch,
             Content = new DialogHost()
             {
-                Identifier = identifier ?? DialogConsts.MainViewDefaultIdentifier,
+                Identifier = id,
                 Content = content
             }
         };
 
         DialogService.OnDialogShowLoadingHandler += (identifier, options, isLoading) =>
         {
-            if (identifier == DialogConsts.MainViewLoadingIdentifier)
+            if (identifier == id)
             {
                 options?.Invoke(loadingContainer);
                 loadingContainer.IsLoading = isLoading;
