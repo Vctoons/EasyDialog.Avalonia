@@ -47,24 +47,14 @@ xmlns:dialog="clr-namespace:EasyDialog.Avalonia;assembly=EasyDialog.Avalonia"
     </Application.Styles>
 ```
 
-4. Inject to you window or view in `App.cs`
-you need input you view or window in CreateDialogWindow or 
+4. Inject to you window or view 
 ```csharp
-
-if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-{
-    desktop.MainWindow = new MainWindow
+   public MainView()
     {
-        DataContext = new MainViewModel()
-    }.CreateDialogWindow();
-}
-else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
-{
-    singleViewPlatform.MainView = new MainView
-    {
-        DataContext = new MainViewModel()
-    }.CreateDialogView();
-}
+        InitializeComponent();
+        // to inject 
+        this.UseEasyDialog();
+    }
 ```
 
 5. get your `DialogService` to use

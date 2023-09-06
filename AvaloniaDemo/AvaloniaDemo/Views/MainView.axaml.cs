@@ -10,6 +10,7 @@ public partial class MainView : UserControl
     public MainView()
     {
         InitializeComponent();
+        this.UseEasyDialog();
     }
     
     private async void Button_OnClick(object? sender, RoutedEventArgs e)

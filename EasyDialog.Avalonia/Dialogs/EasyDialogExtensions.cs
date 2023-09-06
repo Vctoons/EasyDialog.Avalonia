@@ -17,8 +17,6 @@ public static class EasyDialogExtensions
 #else
     internal static readonly DialogService DialogService = new DialogService();
 #endif
-
-
     /// <summary>
     /// AddDialogManager
     /// </summary>
@@ -30,13 +28,16 @@ public static class EasyDialogExtensions
         return service;
     }
 
-
-    public static UserControl? CreateEasyDialogView(this UserControl view, string identifier = null)
+    public static UserControl? UseEasyDialog(this UserControl view, string identifier = null)
     {
-        return InjectContent(view, identifier) as UserControl;
+
+        var content = view.Content;
+        view.Content = null;
+        view.Content = InjectContent(content, identifier);
+        return view;
     }
 
-    public static Window CreateEasyDialogWindow(this Window window, string identifier = null)
+    public static Window UseEasyDialog(this Window window, string identifier = null)
     {
         var content = window.Content;
         window.Content = null;

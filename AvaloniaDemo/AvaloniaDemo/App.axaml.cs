@@ -21,14 +21,14 @@ public partial class App : Application
             desktop.MainWindow = new MainWindow
             {
                 DataContext = new MainViewModel()
-            }.CreateEasyDialogWindow();
+            };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
             singleViewPlatform.MainView = new MainView
             {
                 DataContext = new MainViewModel()
-            }.CreateEasyDialogView();
+            };
         }
 
         base.OnFrameworkInitializationCompleted();
