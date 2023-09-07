@@ -27,7 +27,7 @@ public class DialogService
             },
             handler.closingHandler);
 
-        var res = ((dynamic)dialog!)?.DataContext;
+        var res = ((dynamic) dialog!)?.DataContext;
         return res;
     }
 
@@ -37,6 +37,13 @@ public class DialogService
         var handler = new EasyDialogEventHandlerBase();
         options?.Invoke(handler);
         return ShowAsync(view, identifier, handler);
+    }
+
+    public virtual async Task<TResult?> ShowAsync<TResult>(Control view, string? identifier = null,
+        Action<EasyDialogEventHandlerBase>? options = null)
+    {
+        var res = await ShowAsync(view, identifier, options);
+        return (TResult?) Convert.ChangeType(res, typeof(TResult?));
     }
 
     protected virtual async Task<object?> ShowAsync(Control view, string? identifier = null,
@@ -121,7 +128,7 @@ public class DialogService
         };
         var res = await ShowAsync(stackPanel, identifier,
             handler);
-        return (bool?)res ?? false;
+        return (bool?) res ?? false;
     }
 
     public virtual IDisposable ShowLoading(string? identifier = null,
