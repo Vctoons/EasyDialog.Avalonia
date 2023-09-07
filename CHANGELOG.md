@@ -1,3 +1,10 @@
+# [1.0.0-alpha.6](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2023-09-07)
+
+
+### Features
+
+* support Task<TResult?> ShowAsync ([31351fa](https://github.com/Vctoons/EasyDialog.Avalonia/commit/31351fad74e696b63ebe5ecb8d737a82d0f8a34f))
+
 # [1.0.0-alpha.5](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2023-09-07)
 
 

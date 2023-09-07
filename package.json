@@ -1,6 +1,6 @@
 {
   "name": "EasyDialog.Avalonia",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org/)\r [![GitHub Stars](https://img.shields.io/github/stars/Vctoons/EasyDialog.Avalonia.svg)](https://github.com/Vctoons/EasyDialog.Avalonia/stargazers)\r [![GitHub Issues](https://img.shields.io/github/issues/Vctoons/EasyDialog.Avalonia.svg)](https://github.com/Vctoons/EasyDialog.Avalonia/issues)",
   "main": "index.js",
   "scripts": {
