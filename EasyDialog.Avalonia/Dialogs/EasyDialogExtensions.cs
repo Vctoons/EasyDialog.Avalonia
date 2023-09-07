@@ -52,6 +52,7 @@ public static class EasyDialogExtensions
         
         var loadingContainer = new EasyDialogLoadingContainer()
         {
+            ZIndex = 100,
             HorizontalContentAlignment = HorizontalAlignment.Stretch,
             VerticalContentAlignment = VerticalAlignment.Stretch,
             Content = new DialogHost()
