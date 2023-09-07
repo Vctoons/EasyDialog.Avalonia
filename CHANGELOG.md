@@ -1,3 +1,11 @@
+# [1.0.0-alpha.5](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2023-09-07)
+
+
+### Bug Fixes
+
+* InjectContent EasyDialogLoadingContainer zindex to 100 ([9b605e6](https://github.com/Vctoons/EasyDialog.Avalonia/commit/9b605e6989b002b2002e1f788db97d330c024707))
+* ShowGetDataContextAsync throw exception ([a1891c9](https://github.com/Vctoons/EasyDialog.Avalonia/commit/a1891c9dd4a18de0926036a282a3459eee164594))
+
 # [1.0.0-alpha.4](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2023-09-06)
 
 
