@@ -12,7 +12,7 @@ public class DialogService
 {
     public event Action<string, Action<EasyDialogLoadingContainer>, bool> OnDialogShowLoadingHandler;
 
-    public async Task<TViewModel> ShowGetDataContextAsync<TViewModel>(Control view, string? identifier = null,
+    public async Task<TViewModel?> ShowGetDataContextAsync<TViewModel>(Control view, string? identifier = null,
         Action<EasyDialogEventHandlerBase>? options = null)
         where TViewModel : class
     {
@@ -27,7 +27,7 @@ public class DialogService
             },
             handler.closingHandler);
 
-        var res = ((dynamic)dialog).DataContext;
+        var res = ((dynamic)dialog!)?.DataContext;
         return res;
     }
 
