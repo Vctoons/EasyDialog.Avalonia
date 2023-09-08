@@ -1,3 +1,10 @@
+# [1.0.0-alpha.7](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2023-09-08)
+
+
+### Features
+
+* split to UseEasyLoading and UseEasyDialog ([81bea8e](https://github.com/Vctoons/EasyDialog.Avalonia/commit/81bea8edeacf54ee6a326a2cbde9a8db535ccaf6))
+
 # [1.0.0-alpha.6](https://github.com/Vctoons/EasyDialog.Avalonia/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2023-09-07)
 
 
