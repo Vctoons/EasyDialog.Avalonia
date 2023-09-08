@@ -10,8 +10,8 @@ public class MainWindow : Window
     {
         this.Content = new MainView();
 
-#if DEBUG
-        this.AttachDevTools();
-#endif
+// #if DEBUG
+//         this.AttachDevTools();
+// #endif
     }
 }
