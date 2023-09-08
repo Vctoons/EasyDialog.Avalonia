@@ -14,7 +14,7 @@ make you easily to use Dialog in Avalonia.
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | EasyDialog.Avalonia | [![EasyDialog.Avalonia](https://img.shields.io/nuget/v/EasyDialog.Avalonia.svg)](https://www.nuget.org/packages/EasyDialog.Avalonia/) | [![EasyDialog.Avalonia](https://img.shields.io/nuget/dt/EasyDialog.Avalonia.svg)](https://www.nuget.org/packages/EasyDialog.Avalonia/) |
 
-## Avalonia Framework Tests
+## Avalonia Tests
 
 * Desktop
   * [x] Windows
