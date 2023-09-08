@@ -7,12 +7,15 @@ namespace AvaloniaDemo.Views;
 
 public partial class MainView : UserControl
 {
+
     public MainView()
     {
         InitializeComponent();
-        this.UseEasyDialog();
+
+        this.UseEasyDialog()
+            .UseEasyLoading();
     }
-    
+
     private async void Button_OnClick(object? sender, RoutedEventArgs e)
     {
         using var res = EasyDialogExtensions.DialogService.ShowLoading();
@@ -28,9 +31,12 @@ public partial class MainView : UserControl
         }, options: opt => { opt.CloseOnClickAway = true; });
     }
 
-    
+
     private async void Button_OnClick2(object? sender, RoutedEventArgs e)
     {
-        var res = await EasyDialogExtensions.DialogService.ShowConfirmAsync(options: opt => { opt.CloseOnClickAway = true; });
+        var res = await EasyDialogExtensions.DialogService.ShowConfirmAsync(options: opt =>
+        {
+            opt.CloseOnClickAway = true;
+        });
     }
 }

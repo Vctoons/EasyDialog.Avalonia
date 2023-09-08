@@ -2,6 +2,5 @@
 
 internal class DialogConsts
 {
-    public const string MainViewDefaultIdentifier = "__MainViewIdentifier";
-    public const string MainViewLoadingIdentifier = "__MainViewLoadingIdentifier";
+    public const string DefaultIdentifier = "__DefaultIdentifier";
 }

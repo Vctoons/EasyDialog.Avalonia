@@ -10,33 +10,33 @@ namespace EasyDialog.Avalonia.Dialogs;
 
 public class DialogService
 {
-    public event Action<string, Action<EasyDialogLoadingContainer>, bool> OnDialogShowLoadingHandler;
+    public event Action<string, Action<EasyDialogLoadingContainer>?, bool> OnDialogShowLoadingHandler;
 
-    public async Task<TViewModel?> ShowGetDataContextAsync<TViewModel>(Control view, string? identifier = null,
-        Action<EasyDialogEventHandlerBase>? options = null)
-        where TViewModel : class
-    {
-        var handler = new EasyDialogEventHandlerBase();
-        options?.Invoke(handler);
-        var dialog = await DialogHost.Show(view, identifier ?? DialogConsts.MainViewDefaultIdentifier,
-            (s, e) =>
-            {
-                handler.openedHandler?.Invoke(s, e);
-                var host = (e.Source as DialogHost)!;
-                host.CloseOnClickAway = handler.CloseOnClickAway;
-            },
-            handler.closingHandler);
-
-        var res = ((dynamic) dialog!)?.DataContext;
-        return res;
-    }
+    // public async Task<TViewModel?> ShowGetDataContextAsync<TViewModel>(Control view, string? identifier = null,
+    //     Action<EasyDialogEventHandlerBase>? options = null)
+    //     where TViewModel : class
+    // {
+    //     var handler = new EasyDialogEventHandlerBase();
+    //     options?.Invoke(handler);
+    //     var dialog = await DialogHost.Show(view, identifier ?? DialogConsts.MainViewDefaultIdentifier,
+    //         (s, e) =>
+    //         {
+    //             handler.openedHandler?.Invoke(s, e);
+    //             handler.SetHost(e.Source);
+    //             
+    //         },
+    //         handler.closingHandler);
+    //
+    //     var res = ((dynamic) dialog!)?.DataContext;
+    //     return res;
+    // }
 
     public virtual Task<object?> ShowAsync(Control view, string? identifier = null,
         Action<EasyDialogEventHandlerBase>? options = null)
     {
         var handler = new EasyDialogEventHandlerBase();
         options?.Invoke(handler);
-        return ShowAsync(view, identifier, handler);
+        return BaseShowAsync(view, identifier, handler);
     }
 
     public virtual async Task<TResult?> ShowAsync<TResult>(Control view, string? identifier = null,
@@ -46,15 +46,14 @@ public class DialogService
         return (TResult?) Convert.ChangeType(res, typeof(TResult?));
     }
 
-    protected virtual async Task<object?> ShowAsync(Control view, string? identifier = null,
+    protected virtual async Task<object?> BaseShowAsync(Control view, string? identifier = null,
         EasyDialogEventHandlerBase? handler = null)
     {
-        var res = await DialogHost.Show(view, identifier ?? DialogConsts.MainViewDefaultIdentifier,
+        var res = await DialogHost.Show(view, identifier ?? DialogConsts.DefaultIdentifier,
             (s, e) =>
             {
                 handler?.openedHandler?.Invoke(s, e);
-                var host = (e.Source as DialogHost)!;
-                host.CloseOnClickAway = handler?.CloseOnClickAway ?? false;
+                handler?.SetHost(e.Source);
             },
             handler?.closingHandler);
 
@@ -65,14 +64,6 @@ public class DialogService
         Action<ConfirmDialogEventHandler>? options = null)
     {
         var handler = new ConfirmDialogEventHandler();
-
-        handler.openedHandler = (sender, args) =>
-        {
-            var host = (args.Source as DialogHost)!;
-            host.CloseOnClickAway = true;
-            host.CloseOnClickAwayParameter = false;
-        };
-
         options?.Invoke(handler);
 
         //
@@ -103,7 +94,7 @@ public class DialogService
             {
                 new TextBlock()
                 {
-                    Text = handler.Title ?? "Hint",
+                    Text = handler.Title ?? "Title",
                     FontWeight = FontWeight.Bold,
                     FontSize = 22
                 },
@@ -126,20 +117,20 @@ public class DialogService
                 }
             }
         };
-        var res = await ShowAsync(stackPanel, identifier,
+        var res = await BaseShowAsync(stackPanel, identifier,
             handler);
         return (bool?) res ?? false;
     }
 
     public virtual IDisposable ShowLoading(string? identifier = null,
-        Action<EasyDialogLoadingContainer> loadingOptions = null)
+        Action<EasyDialogLoadingContainer>? loadingOptions = null)
     {
         // TODO: need to Create a new LoadingContainer ?
-        OnDialogShowLoadingHandler?.Invoke(identifier ?? DialogConsts.MainViewLoadingIdentifier, loadingOptions, true);
+        OnDialogShowLoadingHandler?.Invoke(identifier ?? DialogConsts.DefaultIdentifier, loadingOptions, true);
 
         return new DisposeAction(() =>
         {
-            OnDialogShowLoadingHandler?.Invoke(identifier ?? DialogConsts.MainViewLoadingIdentifier, loadingOptions,
+            OnDialogShowLoadingHandler?.Invoke(identifier ?? DialogConsts.DefaultIdentifier, loadingOptions,
                 false);
         });
     }

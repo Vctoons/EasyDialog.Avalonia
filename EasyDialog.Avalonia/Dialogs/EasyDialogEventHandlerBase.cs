@@ -8,6 +8,19 @@ public class EasyDialogEventHandlerBase
     public DialogClosingEventHandler? closingHandler { get; set; }
 
     public bool CloseOnClickAway { get; set; }
+    public object? CloseOnClickAwayParameter { get; set; } = null;
+    // public bool DisableOpeningAnimation { get; set; } = false;
+
+
+    public void SetHost(object? dialogHost)
+    {
+        if (dialogHost is DialogHost host)
+        {
+            host.CloseOnClickAway = CloseOnClickAway;
+            host.CloseOnClickAwayParameter = CloseOnClickAwayParameter;
+            // host.DisableOpeningAnimation = DisableOpeningAnimation;
+        }
+    }
 }
 
 public class ConfirmDialogEventHandler : EasyDialogEventHandlerBase

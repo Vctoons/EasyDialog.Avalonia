@@ -47,13 +47,14 @@ xmlns:dialog="clr-namespace:EasyDialog.Avalonia;assembly=EasyDialog.Avalonia"
     </Application.Styles>
 ```
 
-4. Inject to you window or view 
+4. Inject to you window or view
+use identifier to identify if you have multi view or window use `this.UseEasyLoading().UseEasyDialog();`
 ```csharp
    public MainView()
     {
         InitializeComponent();
         // to inject 
-        this.UseEasyDialog();
+        this.UseEasyLoading().UseEasyDialog();
     }
 ```
 

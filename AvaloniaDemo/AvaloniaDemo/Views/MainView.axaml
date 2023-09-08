@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:AvaloniaDemo.ViewModels"
+             xmlns:views="clr-namespace:AvaloniaDemo.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaDemo.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -18,7 +19,9 @@
             <Button Click="Button_OnClick">ShowLoading</Button>
             <Button Click="Button_OnClick1">ShowDialog</Button>
             <Button Click="Button_OnClick2">ShowConfimDialog</Button>
+            
+            <views:InnerView></views:InnerView>
+            
         </StackPanel>
-
     </Grid>
 </UserControl>

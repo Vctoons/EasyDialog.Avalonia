@@ -1,0 +1,13 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             Background="Aquamarine"
+             x:Class="AvaloniaDemo.Views.InnerView">
+
+    <StackPanel Height="300" Width="300" Spacing="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button Click="ShowLoading">ShowLoading</Button>
+        <Button Click="ShowDialog">ShowDialog</Button>
+    </StackPanel>
+</UserControl>
